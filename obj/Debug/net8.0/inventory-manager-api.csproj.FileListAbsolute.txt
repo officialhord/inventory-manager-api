@@ -1,0 +1,7 @@
+/Users/mac/personal/inventory-manager-api/obj/Debug/net8.0/inventory-manager-api.csproj.AssemblyReference.cache
+/Users/mac/personal/inventory-manager-api/obj/Debug/net8.0/inventory-manager-api.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/personal/inventory-manager-api/obj/Debug/net8.0/inventory-manager-api.AssemblyInfoInputs.cache
+/Users/mac/personal/inventory-manager-api/obj/Debug/net8.0/inventory-manager-api.AssemblyInfo.cs
+/Users/mac/personal/inventory-manager-api/obj/Debug/net8.0/inventory-manager-api.csproj.CoreCompileInputs.cache
+/Users/mac/personal/inventory-manager-api/obj/Debug/net8.0/inventory-manager-api.MvcApplicationPartsAssemblyInfo.cs
+/Users/mac/personal/inventory-manager-api/obj/Debug/net8.0/inventory-manager-api.MvcApplicationPartsAssemblyInfo.cache
