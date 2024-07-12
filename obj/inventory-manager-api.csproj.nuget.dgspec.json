@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/personal/inventory-manager-api/inventory-manager-api.csproj": {}
+    "/Users/mac/Documents/MyProjects/C#Projects/Untitled/inventory-manager-api/inventory-manager-api.csproj": {}
   },
   "projects": {
-    "/Users/mac/personal/inventory-manager-api/inventory-manager-api.csproj": {
+    "/Users/mac/Documents/MyProjects/C#Projects/Untitled/inventory-manager-api/inventory-manager-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/personal/inventory-manager-api/inventory-manager-api.csproj",
+        "projectUniqueName": "/Users/mac/Documents/MyProjects/C#Projects/Untitled/inventory-manager-api/inventory-manager-api.csproj",
         "projectName": "inventory-manager-api",
-        "projectPath": "/Users/mac/personal/inventory-manager-api/inventory-manager-api.csproj",
+        "projectPath": "/Users/mac/Documents/MyProjects/C#Projects/Untitled/inventory-manager-api/inventory-manager-api.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/personal/inventory-manager-api/obj/",
+        "outputPath": "/Users/mac/Documents/MyProjects/C#Projects/Untitled/inventory-manager-api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mac/.nuget/NuGet/NuGet.Config"
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
