@@ -12,6 +12,7 @@ builder.Services.AddControllers();
 // Register you services here
 builder.Services.AddScoped<VendorContext>();
 builder.Services.AddScoped<IVendorRepository, VendorRepository>();
+builder.Services.AddScoped<IInventoryRepository, InventoryRepository>();
 
 builder.Services.AddDbContext<VendorContext>(options =>
                     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
