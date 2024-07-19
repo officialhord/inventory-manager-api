@@ -7,7 +7,7 @@ namespace Repositories
 {
     public interface IInventoryRepository
     {
-        Task<IEnumerable<Inventory>> GetInventoriesAsync();
+        Task<IEnumerable<Inventory>> GetInventoryAsync();
         Task<Inventory> GetInventoryByIdAsync(int id);
         Task<Inventory> AddInventoryAsync(Inventory Inventory);
         Task<Inventory> UpdateInventoryAsync(Inventory Inventory);
@@ -23,19 +23,19 @@ namespace Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Inventory>> GetInventoriesAsync()
+        public async Task<IEnumerable<Inventory>> GetInventoryAsync()
         {
-            return await _context.Inventories.ToListAsync();
+            return await _context.Inventory.ToListAsync();
         }
 
         public async Task<Inventory> GetInventoryByIdAsync(int id)
         {
-            return await _context.Inventories.FindAsync(id);
+            return await _context.Inventory.FindAsync(id);
         }
 
         public async Task<Inventory> AddInventoryAsync(Inventory inventory)
         {
-            _context.Inventories.Add(inventory);
+            _context.Inventory.Add(inventory);
             await _context.SaveChangesAsync();
             return inventory;
         }
@@ -49,13 +49,13 @@ namespace Repositories
 
         public async Task<bool> DeleteInventoryAsync(int id)
         {
-            var inventory = await _context.Inventories.FindAsync(id);
+            var inventory = await _context.Inventory.FindAsync(id);
             if (inventory == null)
             {
                 return false;
             }
 
-            _context.Inventories.Remove(inventory);
+            _context.Inventory.Remove(inventory);
             await _context.SaveChangesAsync();
             return true;
         }

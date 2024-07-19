@@ -25,17 +25,17 @@ namespace Repositories
 
         public async Task<IEnumerable<Vendor>> GetVendorsAsync()
         {
-            return await _context.Vendors.ToListAsync();
+            return await _context.Vendor.ToListAsync();
         }
 
         public async Task<Vendor> GetVendorByIdAsync(int id)
         {
-            return await _context.Vendors.FindAsync(id);
+            return await _context.Vendor.FindAsync(id);
         }
 
         public async Task<Vendor> AddVendorAsync(Vendor vendor)
         {
-            _context.Vendors.Add(vendor);
+            _context.Vendor.Add(vendor);
             await _context.SaveChangesAsync();
             return vendor;
         }
@@ -49,13 +49,13 @@ namespace Repositories
 
         public async Task<bool> DeleteVendorAsync(int id)
         {
-            var vendor = await _context.Vendors.FindAsync(id);
+            var vendor = await _context.Vendor.FindAsync(id);
             if (vendor == null)
             {
                 return false;
             }
 
-            _context.Vendors.Remove(vendor);
+            _context.Vendor.Remove(vendor);
             await _context.SaveChangesAsync();
             return true;
         }

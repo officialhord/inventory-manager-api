@@ -5,6 +5,6 @@ public class VendorContext : DbContext
 {
   public VendorContext(DbContextOptions<VendorContext> options) : base(options) { }
 
-  public DbSet<Vendor> Vendors { get; set; } = null!;
-  public DbSet<Inventory> Inventories { get; set; } = null!;
+  public DbSet<Vendor> Vendor { get; set; } = null!;
+  public DbSet<Inventory> Inventory { get; set; } = null!;
 }

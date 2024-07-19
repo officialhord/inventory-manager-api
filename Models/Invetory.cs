@@ -2,14 +2,14 @@ namespace Models
 {   
     public class Inventory
     {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public int Quantity { get; set; }
-        public decimal Price { get; set; }
-        public long VendorId { get; set; }
-        public string Description { get; set; }
-        public DateTime DateCreated { get; set; }
-        public DateTime LastModified { get; set; }
-        public string Remarks { get; set; }
+        public long id { get; set; }
+        public string name { get; set; } = string.Empty;
+        public int quantity { get; set; }
+        public decimal price { get; set; }
+        public long vendorId { get; set; }
+        public string description { get; set; } = string.Empty;
+        public DateTime dateCreated { get; set; }
+        public DateTime lastModified { get; set; }
+        public string remarks { get; set; } = string.Empty;
     }
 }

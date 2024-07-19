@@ -20,7 +20,7 @@ namespace Controllers
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Inventory>>> GetInventories()
     {
-      var Inventorys = await _inventoryRepository.GetInventoriesAsync();
+      var Inventorys = await _inventoryRepository.GetInventoryAsync();
       return Ok(Inventorys);
     }
 
@@ -40,13 +40,13 @@ namespace Controllers
     public async Task<ActionResult<Inventory>> PostInventory(Inventory inventory)
     {
       var createdInventory = await _inventoryRepository.AddInventoryAsync(inventory);
-      return CreatedAtAction(nameof(GetInventory), new { id = createdInventory.Id }, createdInventory);
+      return CreatedAtAction(nameof(GetInventory), new { id = createdInventory.id }, createdInventory);
     }
 
     [HttpPut("{id}")]
     public async Task<ActionResult<Inventory>> PutInventory(int id, Inventory inventory)
     {
-      if (id != inventory.Id)
+      if (id != inventory.id)
       {
         return BadRequest();
       }
