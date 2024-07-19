@@ -2,10 +2,10 @@ namespace Models
 {   
     public class Vendor
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
+        public int id { get; set; } 
+        public string name { get; set; } = string.Empty;
+        public string address { get; set; } = string.Empty;
+        public string email { get; set; } = string.Empty;
+        public string phone { get; set; } = string.Empty;
     }
 }

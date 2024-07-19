@@ -40,13 +40,13 @@ namespace Controllers
         public async Task<ActionResult<Vendor>> PostVendor(Vendor vendor)
         {
             var createdVendor = await _vendorRepository.AddVendorAsync(vendor);
-            return CreatedAtAction(nameof(GetVendor), new { id = createdVendor.Id }, createdVendor);
+            return CreatedAtAction(nameof(GetVendor), new { id = createdVendor.id }, createdVendor);
         }
 
         [HttpPut("{id}")]
         public async Task<ActionResult<Vendor>> PutVendor(int id, Vendor vendor)
         {
-            if (id != vendor.Id)
+            if (id != vendor.id)
             {
                 return BadRequest();
             }
