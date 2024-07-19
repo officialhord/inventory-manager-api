@@ -7,9 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddScoped<VendorContext>();
 
+// Register you services here
+builder.Services.AddScoped<VendorContext>();
 builder.Services.AddScoped<IVendorRepository, VendorRepository>();
 
 builder.Services.AddDbContext<VendorContext>(options =>
