@@ -1,28 +1,26 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Models;
 using Repositories;
 
 namespace Controllers
 {
-  [Route("api/[controller]")]
-  [ApiController]
-  public class InventoryController : ControllerBase
-  {
-    private readonly IInventoryRepository _inventoryRepository;
-
-    public InventoryController(IInventoryRepository inventoryRepository)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class InventoryController : ControllerBase
     {
-      _inventoryRepository = inventoryRepository;
-    }
+      private readonly IInventoryRepository _inventoryRepository;
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Inventory>>> GetInventories()
-    {
-      var Inventorys = await _inventoryRepository.GetInventoryAsync();
-      return Ok(Inventorys);
-    }
+      public InventoryController(IInventoryRepository inventoryRepository)
+      {
+        _inventoryRepository = inventoryRepository;
+      }
+
+      [HttpGet]
+      public async Task<ActionResult<IEnumerable<Inventory>>> GetInventories()
+      {
+        var Inventorys = await _inventoryRepository.GetInventoryAsync();
+        return Ok(Inventorys);
+      }
 
     [HttpGet("{id}")]
     public async Task<ActionResult<Inventory>> GetInventory(int id)
