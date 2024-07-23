@@ -66,5 +66,17 @@ namespace Controllers
 
             return NoContent();
         }
+
+                [HttpPost("login")]
+        public async Task<ActionResult<Vendor>> Login(Login loginModel)
+        {
+            var vendor = await _vendorRepository.ValidateVendorAsync(loginModel.email, loginModel.password);
+            if (vendor == null)
+            {
+                return Unauthorized();
+            }
+
+            return Ok(vendor);
+        }
     }
 }

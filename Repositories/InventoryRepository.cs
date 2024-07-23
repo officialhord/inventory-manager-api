@@ -8,10 +8,10 @@ namespace Repositories
     public interface IInventoryRepository
     {
         Task<IEnumerable<Inventory>> GetInventoryAsync();
-        Task<Inventory> GetInventoryByIdAsync(int id);
+        Task<Inventory> GetInventoryByIdAsync(long id);
         Task<Inventory> AddInventoryAsync(Inventory Inventory);
         Task<Inventory> UpdateInventoryAsync(Inventory Inventory);
-        Task<bool> DeleteInventoryAsync(int id);
+        Task<bool> DeleteInventoryAsync(long id);
     }
 
      public class InventoryRepository : IInventoryRepository
@@ -28,7 +28,7 @@ namespace Repositories
             return await _context.Inventory.ToListAsync();
         }
 
-        public async Task<Inventory> GetInventoryByIdAsync(int id)
+        public async Task<Inventory> GetInventoryByIdAsync(long id)
         {
             return await _context.Inventory.FindAsync(id);
         }
@@ -47,7 +47,7 @@ namespace Repositories
             return inventory;
         }
 
-        public async Task<bool> DeleteInventoryAsync(int id)
+        public async Task<bool> DeleteInventoryAsync(long id)
         {
             var inventory = await _context.Inventory.FindAsync(id);
             if (inventory == null)

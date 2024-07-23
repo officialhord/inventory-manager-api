@@ -23,7 +23,7 @@ namespace Controllers
       }
 
     [HttpGet("{id}")]
-    public async Task<ActionResult<Inventory>> GetInventory(int id)
+    public async Task<ActionResult<Inventory>> GetInventory(long id)
     {
       var inventory = await _inventoryRepository.GetInventoryByIdAsync(id);
       if (inventory == null)
@@ -42,7 +42,7 @@ namespace Controllers
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<Inventory>> PutInventory(int id, Inventory inventory)
+    public async Task<ActionResult<Inventory>> PutInventory(long id, Inventory inventory)
     {
       if (id != inventory.id)
       {
@@ -54,7 +54,7 @@ namespace Controllers
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteInventory(int id)
+    public async Task<IActionResult> DeleteInventory(long id)
     {
       var result = await _inventoryRepository.DeleteInventoryAsync(id);
       if (!result)

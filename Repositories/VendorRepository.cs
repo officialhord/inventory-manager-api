@@ -8,10 +8,12 @@ namespace Repositories
     public interface IVendorRepository
     {
         Task<IEnumerable<Vendor>> GetVendorsAsync();
-        Task<Vendor> GetVendorByIdAsync(int id);
+        Task<Vendor> GetVendorByIdAsync(long id);
         Task<Vendor> AddVendorAsync(Vendor vendor);
         Task<Vendor> UpdateVendorAsync(Vendor vendor);
-        Task<bool> DeleteVendorAsync(int id);
+        Task<bool> DeleteVendorAsync(long id);
+                Task<Vendor> ValidateVendorAsync(string email, string password); // New method for login
+
     }
 
      public class VendorRepository : IVendorRepository
@@ -28,7 +30,7 @@ namespace Repositories
             return await _context.Vendor.ToListAsync();
         }
 
-        public async Task<Vendor> GetVendorByIdAsync(int id)
+        public async Task<Vendor> GetVendorByIdAsync(long id)
         {
             return await _context.Vendor.FindAsync(id);
         }
@@ -47,7 +49,7 @@ namespace Repositories
             return vendor;
         }
 
-        public async Task<bool> DeleteVendorAsync(int id)
+        public async Task<bool> DeleteVendorAsync(long id)
         {
             var vendor = await _context.Vendor.FindAsync(id);
             if (vendor == null)
@@ -58,6 +60,12 @@ namespace Repositories
             _context.Vendor.Remove(vendor);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<Vendor> ValidateVendorAsync(string email, string password)
+        {
+            return await _context.Vendor
+                .FirstOrDefaultAsync(v => v.email.ToLower() == email.ToLower() && v.password == password);
         }
     }
     
